@@ -1,0 +1,155 @@
+<!doctype html>
+<HTML>
+<head>
+<style>
+.rectangle
+{
+stroke:black;
+fill:#fff;
+stroke-width:2px;
+}
+.stairs
+{
+stroke:black;
+fill:#efa2a2;
+stroke-width:1px;
+}
+.stairs_2
+{
+stroke:black;
+fill:#9d8eb8;
+stroke-width:2px;
+}
+.roof
+{
+stroke:black;
+fill:#008f8c;
+stroke-width:2px;
+}
+.ceiling
+{
+margin-left:auto;
+margin-right:auto;
+}
+.sun
+{
+stroke-width:2px;
+stroke:black;
+}
+.rays
+{
+stroke-width:2px;
+stroke:black;
+}
+.tree
+{
+float:right;
+border:solid 1px black;
+}
+.door
+{
+fill:#690002;
+}
+.wall
+{
+fill:#b9729f;
+}
+
+
+<!-- svg is inline object -->
+</style>
+
+</head>
+<body>
+ <canvas id="myCanvas" width="578" height="200"></canvas>   
+<svg width="100%" height="200" style="position: absolute;
+    top: 0px;
+    left: 73px;">
+<!-- <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs> -->
+  
+  <defs>
+  <linearGradient id="grad1" x1="0%" y1="20%" x2="100%" y1="40%">
+  <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1"/>
+  <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:1"/>
+  </linearGradient>
+  </defs>
+
+<!-- <polygon points="20,180 10,50 100,70 150,180 220,20 250,160 300,100 350,180 450,200
+430,200
+" class="rectangle"/>
+<polygon points="850,180 920,50 990,190 1000,190 1200,150 1200,200
+" class="rectangle" style="float:right;"/> -->
+
+
+<circle cx="600" cy="70" r="50" class="sun" fill="url(#grad1)"/>
+<line x1="550" y1="0" x2="570" y2="15" class="rays" />
+<line x1="600" y1="0" x2="600" y2="15" class="rays" />
+<line x1="470" y1="5" x2="548" y2="50" class="rays" />
+<line x1="440" y1="60" x2="545" y2="75" class="rays"/>
+<line x1="450" y1="120" x2="549" y2="100" class="rays"/>
+<line x1="480" y1="190" x2="570" y2="125" class="rays"/>
+<line x1="530" y1="250" x2="590" y2="135" class="rays"/>
+<line x1="620" y1="250" x2="620" y2="130" class="rays"/>
+<line x1="730" y1="190" x2="650" y2="110" class="rays"/>
+<line x1="770" y1="130" x2="660" y2="90" class="rays"/>
+<line x1="780" y1="80" x2="670" y2="70" class="rays"/>
+<line x1="780" y1="10" x2="665" y2="50" class="rays"/>
+<line x1="760" y1="-40" x2="660" y2="40" class="rays"/>
+<line x1="700" y1="-40" x2="630" y2="20" class="rays"/>
+</svg>
+
+
+<svg width="800" height="150" class="ceiling">
+<polygon points="470,10 300,10 100,150 720,150" class="roof" />
+</svg>
+<svg width="700" height="220">
+<rect width="400" height="220" x="200" y="0" class="wall" />
+<rect width="120" height="140" x="340" y="80" class="rectangle" />
+<polygon points="460,80 400,100 400,200 460,220" class="door" />
+</svg>
+<svg width="800" height="20">
+<rect width="500" height="20" x="150" y="0" class="stairs" />
+</svg>
+<svg width="800" height="20">
+<rect width="600" height="20" x="100" y="0" class="stairs_2" />
+</svg>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ <script>
+ var canvas=document.getElementById('myCanvas');
+
+ var context=canvas.getContext('2d');
+ 
+ context.beginPath();
+ //Start point moveTo(170,80)
+ context.moveTo(170,80);
+ //context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);
+  context.bezierCurveTo(20,80,60,160,80,160);
+  context.bezierCurveTo(80,160,140,240,210,160);
+  context.bezierCurveTo(210,160,240,240,320,160);
+  context.bezierCurveTo(320,160,400,220,400,120);
+  context.bezierCurveTo(400,120,450,80,400,60);
+  context.bezierCurveTo(400,60,350,20,250,90);
+  context.bezierCurveTo(250,90,220,20,170,80);
+
+ 
+ 
+ context.closePath();
+ 
+ context.lineWidth=2;
+ 
+ context.strokeStyle='black';
+ context.fillStyle='#1ecbcb';
+ 
+ context.stroke();
+ context.fill();
+    
+
+	  </script>
+</HTML>
